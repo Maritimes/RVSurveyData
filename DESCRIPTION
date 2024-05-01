@@ -7,6 +7,8 @@ Description: This package contains selected tables and derived objects from the 
 Depends:
     R (>= 2.10)
 Suggests:
+    ggplot2,
+    mapdata,
     purrr,
     ROracle,
     usethis

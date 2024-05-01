@@ -7,7 +7,7 @@
 \format{
 data.frame
 \describe{
-\item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+\item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
 \item{SPEC}{Maritimes species code.}
 \item{TOTWGT}{Total Weight (Kg), standardized for a 1.75NM tow. When a trawl is hauled, all of the individuals for a given species are weighed and counted. These values become TOTWGT and TOTNO in GSCAT. }

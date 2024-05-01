@@ -55,6 +55,11 @@ updatePackageSpatialData <- function(){
   }
   
   if (F){
+    requireNamespace("sf", quietly = TRUE)
+    requireNamespace("dplyr", quietly = TRUE)
+    requireNamespace("mapdata", quietly = TRUE)
+    requireNamespace("ggplot2", quietly = TRUE)
+    
     #'   #' created generously large area (based on the strata) 
     #'   #' for which to extract coastline and bathy
     strataRng1<- as.vector(sf::st_bbox(strataMar_sf))
@@ -71,17 +76,14 @@ updatePackageSpatialData <- function(){
     bbox <- sf::st_bbox(c(xmin = limits[1], xmax = limits[2], ymin = limits[3], ymax = limits[4]), crs = sf::st_crs(4326))
     bbox_poly <- sf::st_as_sfc(bbox)
     
-    library(mapdata)
-    library(marmap)
-    library(dplyr)
-    library(sf)
-    library(lwgeom)
+
     data <- ggplot2::map_data("world2Hires",region = c('Canada', 'USA', 'France'), wrap = c(-180,180))
     sf_data <- sf::st_as_sf(data, coords = c("long", "lat"), crs = 4326)
     sf::st_write(sf_data, "test.shp")
     sf::st_write(bbox_poly, "bbox_poly.shp",append=F)
     # <do GIS stuff>
-    strataMar_sf<-st_read("RVSurveyDataSpatial.gpkg", layer= "strataMar_sf")
+    
+    strataMar_sf<-sf::st_read("RVSurveyDataSpatial.gpkg", layer= "strataMar_sf")
     # attemps below to export a cropped polygon of the desired area failed. So I did in in QGIS
     
     # intersected_data <- sf::st_intersection(sf_data, bbox_poly)
@@ -93,27 +95,27 @@ updatePackageSpatialData <- function(){
     
     
     
-    maritimesLand_grp <- maritimesLand %>% 
-      group_by(region, subregion, group) %>% 
-      summarise(geometry = sf::st_combine(sf::st_as_sf(., coords = c("long", "lat"), crs = 4326)))
+    # maritimesLand_grp <- maritimesLand %>% 
+    #   group_by(region, subregion, group) %>% 
+    #   summarise(geometry = sf::st_combine(sf::st_as_sf(., coords = c("long", "lat"), crs = 4326)))
     # maritimesLand_sf <- sf::st_as_sf(maritimesLand_grp, coords = c("long", "lat"), crs = 4326)
-    maritimesLand_sf <- sf::st_as_sf(maritimesLand_grp, crs = 4326)
-    tt <- st_crop(maritimesLand_sf, bbox)
-    
-    
-    sf_data <- st_cast(maritimesLand_sf, "POLYGON")
-    
-    tt<- ggplot2::geom_polygon(data = maritimesLand, ggplot2::aes(x = long, y = lat, group = group), fill = "darkgrey", color = NA) 
-    
-    maritimesLand_sf <- sf::st_crop(maritimesLand_sf, bbox)
-    sf_data <- sf::st_cast(maritimesLand_sf, "subregion")
-    maritimesBathy <- marmap::fortify.bathy(marmap::getNOAA.bathy(lon1 = limits[1],
-                                                                  lon2 = limits[2],
-                                                                  lat1 = limits[3],
-                                                                  lat2 = limits[4],
-                                                                  resolution = 1))
-    maritimesBathy_sf <- sf::st_as_sf(maritimesBathy, coords = c("x", "y"), crs = 4326)
-    
+    # maritimesLand_sf <- sf::st_as_sf(maritimesLand_grp, crs = 4326)
+    # tt <- sf::st_crop(maritimesLand_sf, bbox)
+    # 
+    # 
+    # sf_data <- sf::st_cast(maritimesLand_sf, "POLYGON")
+    # 
+    # tt<- ggplot2::geom_polygon(data = maritimesLand, ggplot2::aes(x = long, y = lat, group = group), fill = "darkgrey", color = NA) 
+    # 
+    # maritimesLand_sf <- sf::st_crop(maritimesLand_sf, bbox)
+    # sf_data <- sf::st_cast(maritimesLand_sf, "subregion")
+    # maritimesBathy <- marmap::fortify.bathy(marmap::getNOAA.bathy(lon1 = limits[1],
+    #                                                               lon2 = limits[2],
+    #                                                               lat1 = limits[3],
+    #                                                               lat2 = limits[4],
+    #                                                               resolution = 1))
+    # maritimesBathy_sf <- sf::st_as_sf(maritimesBathy, coords = c("x", "y"), crs = 4326)
+    # 
     #'   maritimesLand <- ggplot2::map_data("world2Hires",region = c('Canada', 'USA', 'France'), wrap = c(-180,180))
     #'   maritimesBathy <- marmap::fortify.bathy(marmap::getNOAA.bathy(lon1 = limits[1], 
     #'                                                           lon2 = limits[2], 

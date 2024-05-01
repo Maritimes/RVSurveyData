@@ -15,7 +15,7 @@
 #' @docType data
 #' @format data.frame
 #' \describe{
-#' \item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 #' \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
 #' \item{SPEC}{Maritimes species code.}
 #' \item{TOTWGT}{Total Weight (Kg), standardized for a 1.75NM tow. When a trawl is hauled, all of the individuals for a given species are weighed and counted. These values become TOTWGT and TOTNO in GSCAT. }
@@ -25,27 +25,27 @@
 #' }
 "GSCAT"
 
-# @title GSCRUISELIST Metadata
-# @name GSCRUISELIST
-# @description This table describes all of the different survey cruises (e.g. when and where they went, etc)
-# @docType data
-# @format data.frame
-# \describe{
-# \item{YEAR}{The year of the survey.}
-# \item{NAFO}{The NADO divisions in which the survey occurred (e.g. 4VWX5; 5Z)}
-# \item{VESL}{A 3 character identifying the vessel (eg. NED)}
-# \item{CRUNO}{A 3 digit code identifying the survey number within the year. (eg. 001)}
-# \item{SDATE}{The start date of the cruise}
-# \item{EDATE}{The end date of the cruise}
-# \item{SETS}{The number of sets conducted during the survey}
-# \item{PURPOSE}{The purpose of the cruise}
-# \item{LOCALE}{Description of the area in which the survey occurred}
-# \item{DATASOURCE}{xxx}
-# \item{DATASTATUS}{xxx}
-# \item{DATALOCATION}{Physical location of hard copy data}
-# \item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
-# }
-#"GSCRUISELIST"
+#' @title GSCRUISELIST Metadata
+#' @name GSCRUISELIST
+#' @description This table describes all of the different survey cruises (e.g. when and where they went, etc)
+#' @docType data
+#' @format data.frame
+#' \describe{
+#' \item{YEAR}{The year of the survey.}
+#' \item{NAFO}{The NADO divisions in which the survey occurred (e.g. 4VWX5; 5Z)}
+#' \item{VESL}{A 3 character identifying the vessel (eg. NED)}
+#' \item{CRUNO}{A 3 digit code identifying the survey number within the year. (eg. 001)}
+#' \item{SDATE}{The start date of the cruise}
+#' \item{EDATE}{The end date of the cruise}
+#' \item{SETS}{The number of sets conducted during the survey}
+#' \item{PURPOSE}{The purpose of the cruise}
+#' \item{LOCALE}{Description of the area in which the survey occurred}
+#' \item{DATASOURCE}{xxx}
+#' \item{DATASTATUS}{xxx}
+#' \item{DATALOCATION}{Physical location of hard copy data}
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' }
+"GSCRUISELIST"
 
 #' @title GSCURNT Metadata
 #' @name GSCURNT
@@ -58,13 +58,40 @@
 #' }
 "GSCURNT"
 
+# @title GSDET Metadata
+# @name GSDET
+# @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
+# @docType data
+# @format data.frame
+# \describe{
+# \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+# \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
+# \item{SPEC}{Maritimes species code.}
+# \item{FSHNO}{Unique number assigned within species and mission.}
+# \item{FLEN}{"Fish Length" - typically cm}
+# \item{FSEX}{Sex of the specimen.}
+# \item{FMAT}{Code for the observed maturity stage.}
+# \item{FWT}{The round weight in grams of the specimen.}
+# \item{AGMAT}{Code for the age material collected.}
+# \item{NANN}{xxx}
+# \item{EDGE}{xxx}
+# \item{CHKMRK}{xxx}
+# \item{AGE}{Age of specimen.}
+# \item{AGER}{xxx}
+# \item{CLEN}{xxx}
+# \item{REMARKS}{xxx}
+# \item{SIZE_CLASS}{xxx}
+# \item{SPECIMEN_ID}{xxx}
+# }
+#' "GSDET"
+
 # @title dataDETS Metadata
 # @name dataDETS
 # @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
 # @docType data
 # @format data.frame
 # \describe{
-# \item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+# \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 # \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
 # \item{SPEC}{Maritimes species code.}
 # \item{FSHNO}{Unique number assigned within species and mission.}
@@ -84,7 +111,7 @@
 # @docType data
 # @format data.frame
 # \describe{
-# \item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+# \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 # \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
 # \item{SPEC}{Maritimes species code.}
 # \item{FSEX}{Sex of the specimen.}
@@ -173,7 +200,7 @@
 #' @docType data
 #' @format data.frame
 #' \describe{
-#' \item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 #' \item{VESEL}{A 1 digit code used to identify the vessel used in the survey}
 #' \item{CRUNO}{A 3 digit code identifying the survey number within the year. (eg. 001)}
 #' \item{YEAR}{The year of the survey.}
@@ -300,7 +327,7 @@
 #' @docType data
 #' @format data.frame
 #' \describe{
-#' \item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 #' \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
 #' \item{WARPOUT}{Warp, in meters}
 #' }

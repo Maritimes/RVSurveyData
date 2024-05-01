@@ -7,7 +7,7 @@
 \format{
 data.frame
 \describe{
-\item{MISSION}{A 10 character field to identify the survey.  The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+\item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
 \item{VESEL}{A 1 digit code used to identify the vessel used in the survey}
 \item{CRUNO}{A 3 digit code identifying the survey number within the year. (eg. 001)}
 \item{YEAR}{The year of the survey.}

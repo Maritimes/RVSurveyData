@@ -16,6 +16,6 @@ extractor <- function(tblNames=NULL, schema=NULL, uid = NULL, pw = NULL, dsn = "
                   sqlStatement <- paste0("select * from ",schema,".",myTable)
                   ROracle::dbGetQuery(con, sqlStatement)
                 })
-  names(res)<- groundfishTables
+  names(res)<- tblNames
   return(res)
 }
