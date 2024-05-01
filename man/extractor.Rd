@@ -6,6 +6,19 @@
 \usage{
 extractor(tblNames = NULL, schema = NULL, uid = NULL, pw = NULL, dsn = "PTRAN")
 }
+\arguments{
+\item{tblNames}{default is \code{NULL}. This is a list full of table names corresponding to 
+tables that should be extracted from the schema identified in  \code{schema}}
+
+\item{schema}{default is \code{NULL}. This is the schema that houses the tables listed in 
+\code{tblNames}.}
+
+\item{uid}{default is \code{NULL}. This is an oracle username with access to the desired tables.}
+
+\item{pw}{default is \code{NULL}. This is the oracle password for the account listed as \code{uid}}
+
+\item{dsn}{default is \code{"PTRAN"}.  This is the name of the database.  Almost certainly PTRAN.}
+}
 \description{
 This function
 }

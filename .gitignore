@@ -3,3 +3,4 @@
 .RData
 .Ruserdata
 /inst/rawSpatial/*
+/inst/hidden_from_git/*

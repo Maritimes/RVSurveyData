@@ -4,7 +4,11 @@
 \alias{updatePackageData}
 \title{updatePackageData}
 \usage{
-updatePackageData(dfList = NULL)
+updatePackageData(tblList = NULL)
+}
+\arguments{
+\item{tblList}{default is \code{NULL}. This is a list full of named dataframes that will be 
+added to the package.}
 }
 \description{
 This function
