@@ -9,6 +9,6 @@ updatePackageData<- function(tblList = NULL){
   
   purrr::walk2(tblList, names(tblList), function(obj, name) {
     assign(name, obj)
-    do.call("use_data", list(as.name(name), overwrite = TRUE))
+    do.call("use_data", list(as.name(name), overwrite = TRUE, compress = "xz"))
   })
 }

@@ -10,6 +10,7 @@
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 extractor <- function(tblNames=NULL, schema=NULL, uid = NULL, pw = NULL, dsn = "PTRAN"){
   requireNamespace("ROracle", quietly = TRUE)
+  requireNamespace("DBI", quietly = TRUE)
   con <- ROracle::dbConnect(DBI::dbDriver("Oracle"), uid, pw, dsn)
   res <- lapply(tblNames,
                 function(myTable){

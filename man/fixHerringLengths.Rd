@@ -7,7 +7,7 @@
 fixHerringLengths(GSDET_ = NULL)
 }
 \arguments{
-\item{GSDET_}{directory}
+\item{GSDET_}{original GSDET object}
 }
 \description{
 This function creates

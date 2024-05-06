@@ -5,15 +5,22 @@ Authors@R: c( person("Mike", "McMahon", email="Mike.McMahon@dfo-mpo.gc.ca", role
 Maintainer: Mike McMahon <Mike.McMahon@dfo-mpo.gc.ca>
 Description: This package contains selected tables and derived objects from the Maritimes Groundfish Survey Database and several associated spatial objects.  
 Depends:
-    R (>= 2.10)
+    R (>= 3.5.0)
 Suggests:
+    DBI,
+    dplyr,
     ggplot2,
     mapdata,
+    Mar.utils,
     purrr,
     ROracle,
+    sf,
     usethis
+Remotes:
+    'Maritimes/Mar.utils'
 Encoding: UTF-8
 License: MIT + file LICENSE
 LazyData: true
+LazyDataCompression: xz
 URL: https://github.com/Maritimes/Mar.SharepointLoader/
 RoxygenNote: 7.2.3

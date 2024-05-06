@@ -7,12 +7,12 @@
 makeGSSPECIES_NEW(GSSPECIES_ANDES_ = NULL, GSSPEC_ = NULL)
 }
 \arguments{
-\item{GSSPECIES_ANDES_}{directory}
+\item{GSSPECIES_ANDES_}{original GSSPECIES_ANDES object}
 
-\item{GSSPEC_}{directory}
+\item{GSSPEC_}{original GSSPEC object}
 }
 \description{
-This function creates
+This function merges GSSPEC and GSSPECIES_ANDES into a single object
 }
 \author{
 Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}

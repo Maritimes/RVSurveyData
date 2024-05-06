@@ -2,8 +2,7 @@
 #source utils for the variables groundfishTblNames and dataPath
 tblNames <- c('GSAUX', 'GSCAT', 'GSCURNT', 'GSDET', 'GSFORCE', 'GSGEAR', 'GSHOWOBT',
               'GSINF', 'GSMATURITY', 'GSMISSIONS', 'GSSEX', 'GSSPEC', 'GSSPECIES_ANDES',
-              'GSSTRATUM', 'GSWARPOUT', 'GSXTYPE')
-# tblNames <- c('GSCAT', 'GSDET', 'GSINF', 'GSSPEC', 'GSSPECIES_ANDES')
+              'GSSTRATUM', 'GSWARPOUT', 'GSXTYPE', "GSCRUISELIST")
 dataPath<-"C:/Users/McMahonM/OneDrive - DFO-MPO/Documents - Data Management Team-Test Shared Channel/RVSurveyData"
 
 ##### PURPOSE
@@ -13,12 +12,12 @@ dataPath<-"C:/Users/McMahonM/OneDrive - DFO-MPO/Documents - Data Management Team
 #' the slow process of re-extracting
 
 # 1 Extract the desired data tables to a list
-tblList<-extractor(tblNames, schema = "GROUNDFISH", uid = groundfish.username, pw = groundfish.password)
+tblList<-extractor("GSCRUISELIST", schema = "GROUNDFISH", uid = groundfish.username, pw = groundfish.password)
 
 if (F){
   #' 2 If you need to stop working on this, but want to save the objects locally, you can do this 
   #' to write the objects within a list to discrete rds files within a specified folder
-  listToFolder(dfList = tblList, dataPath)
+  listToFolder(tblList = tblList, dataPath)
   # no need to extract again - just load them:
   tblList <- folderToList(tblNames = tblNames, dataPath )
 }

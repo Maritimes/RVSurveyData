@@ -1,9 +1,8 @@
 #' @title makeGSSPECIES_NEW
-#' @description This function creates 
-#' @param GSSPECIES_ANDES_ directory 
-#' @param GSSPEC_ directory 
+#' @description This function merges GSSPEC and GSSPECIES_ANDES into a single object
+#' @param GSSPECIES_ANDES_ original GSSPECIES_ANDES object
+#' @param GSSPEC_ original GSSPEC object 
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
-#' @export
 makeGSSPECIES_NEW <- function(GSSPECIES_ANDES_=NULL, GSSPEC_=NULL){
   GSSPECIES_APHIA <-  merge(GSSPECIES_ANDES_, GSSPEC_[, c("SPEC","LGRP","LFSEXED")], by.x= "CODE", by.y = "SPEC", all.x=T)
   return(GSSPECIES_APHIA)
@@ -11,9 +10,8 @@ makeGSSPECIES_NEW <- function(GSSPECIES_ANDES_=NULL, GSSPEC_=NULL){
 
 #' @title fixHerringLengths
 #' @description This function creates 
-#' @param GSDET_ directory 
+#' @param GSDET_ original GSDET object 
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
-#' @export
 fixHerringLengths <-function(GSDET_ = NULL){
   #Fix herring lengths - ensure all are in mm
   #NED 2016016 - first instance of measuring herring in mm - convert all prior data from cm to mm
@@ -29,16 +27,18 @@ fixHerringLengths <-function(GSDET_ = NULL){
 
 #' @title disentangleGSDET
 #' @description This function creates 
-#' @param GSDET_ directory 
-#' @param GSCAT_ directory 
-#' @param GSINF_ directory 
+#' @param GSDET_ original GSDET object 
+#' @param GSCAT_ original GSCAT object 
+#' @param GSINF_ original GSINF object 
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
-#' @importFrom dplyr %>%
-#' @export
 disentangleGSDET <-function(GSDET_=NULL, GSCAT_= NULL, GSINF_ = NULL){
   # 1 create table from GSDET with CLEN for each MISSION SETNO SPEC FLEN FSEX.
   #  - need to correct CLEN for size_class 1st
   #  - each set will be reduced to 1 record each combination of SPEC, FLEN and FSEX.
+  suppressPackageStartupMessages(requireNamespace("dplyr", quietly = TRUE))
+  `%>%` <- dplyr::`%>%`
+  
+  CLEN <- FLEN <- FSEX <- MISSION <- SETNO <- SIZE_CLASS <- SPEC <- NULL
   res<- list()
   #if sex is na, it's fair to say we don't know it.
   GSDET_[is.na(GSDET_$FSEX), "FSEX"] <- 0
@@ -48,8 +48,8 @@ disentangleGSDET <-function(GSDET_=NULL, GSCAT_= NULL, GSINF_ = NULL){
   
   dataLF <- dataLF[!is.na(dataLF$FLEN), c("MISSION", "SETNO", "SPEC", "SIZE_CLASS", "FSEX","FLEN", "CLEN")]
   dataLF <- dataLF %>%
-    group_by(MISSION, SETNO, SPEC, SIZE_CLASS, FSEX, FLEN) %>%
-    summarise(CLEN_RAW = sum(CLEN), .groups = "keep") %>%
+    dplyr::group_by(MISSION, SETNO, SPEC, SIZE_CLASS, FSEX, FLEN) %>%
+    dplyr::summarise(CLEN_RAW = sum(CLEN), .groups = "keep") %>%
     as.data.frame()
   #get the totwgt and sampwgt for every mission/set/spec/size_class combo, and use them to create
   #a ratio, and apply it to existing CLEN
@@ -68,8 +68,8 @@ disentangleGSDET <-function(GSDET_=NULL, GSCAT_= NULL, GSINF_ = NULL){
   
   #now that we have correct numbers at length for all lengths, we can drop add them (and drop size classes)
   dataLF <- dataLF %>%
-    group_by(MISSION, SETNO, SPEC, FSEX, FLEN) %>%
-    summarise(CLEN = sum(CLEN), .groups = "keep") %>%
+    dplyr::group_by(MISSION, SETNO, SPEC, FSEX, FLEN) %>%
+    dplyr::summarise(CLEN = sum(CLEN), .groups = "keep") %>%
     as.data.frame()
   
   res$dataLF <- dataLF
@@ -87,6 +87,9 @@ disentangleGSDET <-function(GSDET_=NULL, GSCAT_= NULL, GSINF_ = NULL){
   return(res)
 }
 
+#' @title rmSizeClasses
+#' @param GSCAT_ original GSCAT object 
+#' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 rmSizeClasses <-function(GSCAT_= NULL){
   GSCAT_[is.na(GSCAT_$TOTNO),"TOTNO"]<-0
   GSCAT_[is.na(GSCAT_$TOTWGT),"TOTWGT"]<-0
@@ -109,7 +112,11 @@ rmSizeClasses <-function(GSCAT_= NULL){
   return(GSCAT_)
 }
 
+#' @title addDDCoords
+#' @param GSINF_ original GSINF object 
+#' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 addDDCoords <- function(GSINF_=NULL){
+  requireNamespace("Mar.utils", quietly = TRUE)
   GSINF_ <- Mar.utils::DDMMx_to_DD(df=GSINF_, format = "DDMMMM", lat.field = "SLAT", lon.field = "SLONG", WestHemisphere = T)
   colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "LATITUDE"
   colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "LONGITUDE"
@@ -117,4 +124,29 @@ addDDCoords <- function(GSINF_=NULL){
   colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "ELATITUDE"
   colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "ELONGITUDE"
   return(GSINF_)
+}
+
+## @title roundDD2Min
+## @description This function can be used to round decimal degrees to the nearest geographic minute.  
+## It can be set to round up or down, and is useful for generating plots with boundaries that make sense.
+## @param x this is value that should be rounded.
+## @param how the default is \code{"round"}, but values of \code{"ceiling"} and \code{"floor"} are also 
+## acceptable. \code{"round"} just rounds the value, while the others forcibly round it up or down 
+## (respectively) to the nearest minute.
+## @param nearestMin the default is \code{1}, but values between 1 and 60 make sense. 
+## @param digits the default is \code{4}.  This is how many decimal places the resultant data should be rounded to.
+## @returns the original value, but rounded.
+## @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
+roundDD2Min<-function(x=NULL, how = "round", nearestMin = 1, digits=4){
+  minDD = 0.016666666666 #this is 1 min in DD
+  base = nearestMin*minDD
+  if (how =="round"){
+    res <- base * round(x/base)
+  }else if (how =="ceiling"){
+    res <- base * ceiling(x/base)
+  }else if (how=="floor"){
+    res <- base * floor(x/base)
+  }
+  res <- round(res,digits)
+  return(res)
 }
