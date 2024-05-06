@@ -2,7 +2,7 @@
 #' @description This function generates the sf files included in RVSurveyData
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 updatePackageSpatialData <- function(){
-  if (F){
+  res<-list()
     requireNamespace("sf", quietly = TRUE)
     requireNamespace("Mar.utils", quietly = TRUE)
     #stuff below is for Kasia's new improved layer.
@@ -29,10 +29,15 @@ updatePackageSpatialData <- function(){
     maritimesCoast_sf$fid <- maritimesCoast_sf$group <- NULL
     maritimesCoast_sf <- sf::st_transform(maritimesCoast_sf, crs = 4326)
     
-    Mar.utils::df_sf_to_gpkg(nafo_sf, layerName = "nafo_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
-    Mar.utils::df_sf_to_gpkg(strataMar4VSW_sf, layerName = "strataMar4VSW_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
-    Mar.utils::df_sf_to_gpkg(strataMar_sf, layerName = "strataMar_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
-    Mar.utils::df_sf_to_gpkg(maritimesCoast_sf, layerName = "maritimesCoast_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
+    res$nafo_sf <- nafo_sf
+    res$strataMar_sf <- strataMar_sf
+    res$strataMar4VSW_sf <- strataMar4VSW_sf
+    res$maritimesCoast_sf <- maritimesCoast_sf
+    
+    # Mar.utils::df_sf_to_gpkg(nafo_sf, layerName = "nafo_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
+    # Mar.utils::df_sf_to_gpkg(strataMar4VSW_sf, layerName = "strataMar4VSW_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
+    # Mar.utils::df_sf_to_gpkg(strataMar_sf, layerName = "strataMar_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
+    # Mar.utils::df_sf_to_gpkg(maritimesCoast_sf, layerName = "maritimesCoast_sf", gpkgName = "RVSurveyDataSpatial.gpkg")
     
     #if you pull from the gpkg, the geometry column will become geom
     # strataMar_sf<-st_read("RVSurveyDataSpatial.gpkg", layer= "strataMar_sf")
@@ -48,11 +53,11 @@ updatePackageSpatialData <- function(){
     # colnames(maritimesCoast_sf)[colnames(maritimesCoast_sf)=="geom"] <- "geometry"
     # st_geometry(maritimesCoast_sf) <- "geometry"  
     
-    usethis::use_data(nafo_sf, overwrite = TRUE)
-    usethis::use_data(strataMar_sf, overwrite = TRUE)
-    usethis::use_data(strataMar4VSW_sf, overwrite = TRUE)
-    usethis::use_data(maritimesCoast_sf, overwrite = TRUE)
-  }
+    # usethis::use_data(nafo_sf, overwrite = TRUE)
+    # usethis::use_data(strataMar_sf, overwrite = TRUE)
+    # usethis::use_data(strataMar4VSW_sf, overwrite = TRUE)
+    # usethis::use_data(maritimesCoast_sf, overwrite = TRUE)
+
   
   if (F){
     requireNamespace("sf", quietly = TRUE)
@@ -123,6 +128,7 @@ updatePackageSpatialData <- function(){
     #'                                                           lat2 = limits[4], 
     #'                                                           resolution = 1))
   }
+    return(res)
 }
 
 

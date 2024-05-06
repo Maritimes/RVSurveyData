@@ -1,7 +1,7 @@
 groundfishTblNames <- c('GSAUX', 'GSCAT', 'GSCURNT', 'GSDET', 'GSFORCE', 'GSGEAR', 'GSHOWOBT',
 'GSINF', 'GSMATURITY', 'GSMISSIONS', 'GSSEX', 'GSSPEC', 'GSSPECIES_ANDES',
 'GSSTRATUM', 'GSWARPOUT', 'GSXTYPE')
-sharepointPath = "C:/Users/McMahonM/OneDrive - DFO-MPO/Documents - Data Management Team-Test Shared Channel/RVSurveyData"
+data = "C:/Users/McMahonM/OneDrive - DFO-MPO/Documents - Data Management Team-Test Shared Channel/RVSurveyData"
 #"https://086gc.sharepoint.com/sites/DataManagementTeam-SharedChannel/Shared%20Documents/RVSurveyData""
 
 ## @title roundDD2Min

@@ -6,11 +6,19 @@
 #' @param dataPath default is \code{NULL}. This is the path to the folder where the rds files should
 #' be saved.
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
+# listToFolder <- function(tblList=NULL, dataPath = NULL){
+#   lapply(names(tblList), function(item_name) {
+#     df <- tblList[[item_name]]
+#     rds_filename <- file.path(dataPath, paste0(item_name, "_raw.rds"))
+#     saveRDS(df, rds_filename)
+#   })
+#   return(invisible(NULL))
+# }
 listToFolder <- function(tblList=NULL, dataPath = NULL){
-  lapply(names(tblList), function(item_name) {
+  for (item_name in names(tblList)) {
     df <- tblList[[item_name]]
     rds_filename <- file.path(dataPath, paste0(item_name, "_raw.rds"))
     saveRDS(df, rds_filename)
-  })
+  }
   return(invisible(NULL))
 }

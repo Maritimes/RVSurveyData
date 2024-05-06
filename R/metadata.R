@@ -83,43 +83,43 @@
 # \item{SIZE_CLASS}{xxx}
 # \item{SPECIMEN_ID}{xxx}
 # }
-#' "GSDET"
+# "GSDET"
 
-# @title dataDETS Metadata
-# @name dataDETS
-# @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
-# @docType data
-# @format data.frame
-# \describe{
-# \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
-# \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
-# \item{SPEC}{Maritimes species code.}
-# \item{FSHNO}{Unique number assigned within species and mission.}
-# \item{SPECIMEN_ID}{Specimen Identifier}
-# \item{FLEN}{"Fish Length" - typically cm}
-# \item{FSEX}{Sex of the specimen.}
-# \item{FMAT}{Code for the observed maturity stage.}
-# \item{FWT}{The round weight in grams of the specimen.}
-# \item{AGMAT}{Code for the age material collected.}
-# \item{AGE}{Age of specimen.}
-# }
-#' "dataDETS"
-#' 
-# @title dataLF Metadata
-# @name dataLF
-# @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
-# @docType data
-# @format data.frame
-# \describe{
-# \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
-# \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
-# \item{SPEC}{Maritimes species code.}
-# \item{FSEX}{Sex of the specimen.}
-# \item{FLEN}{"Fish Length" - typically cm}
-# \item{CLEN}{Count at Length, standardized for a 1.75NM tow.}
-# \item{CLEN_RAW}{Count at Length, raw data.}
-#  }
-# "dataLF"
+#' @title dataDETS Metadata
+#' @name dataDETS
+#' @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
+#' @docType data
+#' @format data.frame
+#' \describe{
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
+#' \item{SPEC}{Maritimes species code.}
+#' \item{FSHNO}{Unique number assigned within species and mission.}
+#' \item{SPECIMEN_ID}{Specimen Identifier}
+#' \item{FLEN}{"Fish Length" - typically cm}
+#' \item{FSEX}{Sex of the specimen.}
+#' \item{FMAT}{Code for the observed maturity stage.}
+#' \item{FWT}{The round weight in grams of the specimen.}
+#' \item{AGMAT}{Code for the age material collected.}
+#' \item{AGE}{Age of specimen.}
+#' }
+"dataDETS"
+
+#' @title dataLF Metadata
+#' @name dataLF
+#' @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
+#' @docType data
+#' @format data.frame
+#' \describe{
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
+#' \item{SPEC}{Maritimes species code.}
+#' \item{FSEX}{Sex of the specimen.}
+#' \item{FLEN}{"Fish Length" - typically cm}
+#' \item{CLEN}{Count at Length, standardized for a 1.75NM tow.}
+#' \item{CLEN_RAW}{Count at Length, raw data.}
+#'  }
+"dataLF"
 
 #' @title GSFORCE Metadata
 #' @name GSFORCE
@@ -219,59 +219,59 @@
 #' }
 "GSSEX"
 
-#' @title GSSPEC Metadata
-#' @name GSSPEC
-#' @description This table appears to describe quality control and data processing parameters by species
-#' @docType data
-#' @format data.frame
-#' \describe{
-#' \item{SPEC}{Maritimes species code.}
-#' \item{CNAME}{The common name of the species.}
-#' \item{DMIN}{Minimum depth for this species}
-#' \item{DMAX}{Maximum depth for this species}
-#' \item{VSEX1}{xxx}
-#' \item{VSEX2}{xxx}
-#' \item{VSEX3}{xxx}
-#' \item{LGRP}{length grouping}
-#' \item{LMIN}{Minimum length}
-#' \item{LMAX}{Maximum length}
-#' \item{MATREQ}{Aging materials required}
-#' \item{SAMPREQ}{Samples required}
-#' \item{MLEN}{xxx}
-#' \item{LENWGTA}{Length weight regression coefficient a}
-#' \item{LENWGTB}{Length weight regression coefficient b}
-#' \item{LFSEXED}{Length frequency counts by sex (Y/N)}
-#' \item{MAXWGT}{Maximum weight for species}
-#' }
-#' "GSSPEC"
-
-# @title GSSPECIES_ANDES
-# @name GSSPECIES_ANDES
-# @description This is an updated version of the Maritimes Species Code table.
+# @title GSSPEC Metadata
+# @name GSSPEC
+# @description This table appears to describe quality control and data processing parameters by species
 # @docType data
 # @format data.frame
 # \describe{
-# \item{CODE}{The numeric code used to identify the species/group.}
-# \item{UUID}{A unique identifier used to identify the species/group.}
-# \item{APHIAID}{WoRMS Aphia ID code.}
-# \item{COMM}{The common name of the species.}
-# \item{SPEC}{The scientific name of the species/group.}
-# \item{IDD_CONFID_SINCE}{A date indicating the point in time at which this species was confidently and consistently identified during the survey.}
-# \item{RANK}{The taxonomic level for the value of SCIENTIFICNAME}
-# \item{VALID_SPP}{Field indicating if this is a biological group worthy of an aphiaid (i.e. 0= obsolete, 1 = valid, 2 =invalid).}
-# \item{AUTHORITY}{The authority is the name of the scientist or scientists who first validly published the name.}
-# \item{KINGDOM}{KINGDOM (for APHIAID from WoRMS)}
-# \item{PHYLUM}{PHYLUM (for APHIAID from WoRMS)}
-# \item{CLASS}{CLASS (for APHIAID from WoRMS)}
-# \item{ORDER}{ORDER (for APHIAID from WoRMS)}
-# \item{FAMILY}{FAMILY (for APHIAID from WoRMS)}
-# \item{GENUS}{GENUS (for APHIAID from WoRMS)}
-# \item{COMMENTS}{Additional information.}
+# \item{SPEC}{Maritimes species code.}
+# \item{CNAME}{The common name of the species.}
+# \item{DMIN}{Minimum depth for this species}
+# \item{DMAX}{Maximum depth for this species}
+# \item{VSEX1}{xxx}
+# \item{VSEX2}{xxx}
+# \item{VSEX3}{xxx}
 # \item{LGRP}{length grouping}
+# \item{LMIN}{Minimum length}
+# \item{LMAX}{Maximum length}
+# \item{MATREQ}{Aging materials required}
+# \item{SAMPREQ}{Samples required}
+# \item{MLEN}{xxx}
+# \item{LENWGTA}{Length weight regression coefficient a}
+# \item{LENWGTB}{Length weight regression coefficient b}
 # \item{LFSEXED}{Length frequency counts by sex (Y/N)}
-# \item{MODIFIED}{"Date of most recent edit to APHIAID information}
+# \item{MAXWGT}{Maximum weight for species}
 # }
-"GSSPECIES_ANDES"
+# "GSSPEC"
+
+#' @title GSSPECIES_NEW
+#' @name GSSPECIES_NEW
+#' @description This is an updated version of the Maritimes Species Code table.
+#' @docType data
+#' @format data.frame
+#' \describe{
+#' \item{CODE}{The numeric code used to identify the species/group.}
+#' \item{UUID}{A unique identifier used to identify the species/group.}
+#' \item{APHIAID}{WoRMS Aphia ID code.}
+#' \item{COMM}{The common name of the species.}
+#' \item{SPEC}{The scientific name of the species/group.}
+#' \item{IDD_CONFID_SINCE}{A date indicating the point in time at which this species was confidently and consistently identified during the survey.}
+#' \item{RANK}{The taxonomic level for the value of SCIENTIFICNAME}
+#' \item{VALID_SPP}{Field indicating if this is a biological group worthy of an aphiaid (i.e. 0= obsolete, 1 = valid, 2 =invalid).}
+#' \item{AUTHORITY}{The authority is the name of the scientist or scientists who first validly published the name.}
+#' \item{KINGDOM}{KINGDOM (for APHIAID from WoRMS)}
+#' \item{PHYLUM}{PHYLUM (for APHIAID from WoRMS)}
+#' \item{CLASS}{CLASS (for APHIAID from WoRMS)}
+#' \item{ORDER}{ORDER (for APHIAID from WoRMS)}
+#' \item{FAMILY}{FAMILY (for APHIAID from WoRMS)}
+#' \item{GENUS}{GENUS (for APHIAID from WoRMS)}
+#' \item{COMMENTS}{Additional information.}
+#' \item{LGRP}{length grouping}
+#' \item{LFSEXED}{Length frequency counts by sex (Y/N)}
+#' \item{MODIFIED}{"Date of most recent edit to APHIAID information}
+#' }
+"GSSPECIES_NEW"
 
 
 # @title GSSTRATA Metadata

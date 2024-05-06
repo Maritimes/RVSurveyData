@@ -17,8 +17,4 @@ GSFORCE
 \description{
 This is a lookup table for describing the wind.
 }
-\details{
-"GSDET"
-"dataDETS"
-}
 \keyword{datasets}
