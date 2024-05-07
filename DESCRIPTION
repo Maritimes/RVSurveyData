@@ -22,5 +22,5 @@ Encoding: UTF-8
 License: MIT + file LICENSE
 LazyData: true
 LazyDataCompression: xz
-URL: https://github.com/Maritimes/Mar.SharepointLoader/
+URL: https://github.com/Maritimes/RVSurveyData/
 RoxygenNote: 7.2.3
