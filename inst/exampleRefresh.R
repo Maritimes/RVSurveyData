@@ -12,7 +12,7 @@ dataPath<-"C:/Users/McMahonM/OneDrive - DFO-MPO/Documents - Data Management Team
 #' the slow process of re-extracting
 
 # 1 Extract the desired data tables to a list
-tblList<-extractor("GSCRUISELIST", schema = "GROUNDFISH", uid = groundfish.username, pw = groundfish.password)
+tblList<-extractor(tblNames, schema = "GROUNDFISH", uid = groundfish.username, pw = groundfish.password)
 
 if (F){
   #' 2 If you need to stop working on this, but want to save the objects locally, you can do this 
@@ -29,7 +29,7 @@ if (F){
 GSDETProducts <- disentangleGSDET(tblList$GSDET, GSCAT_ = tblList$GSCAT, GSINF_ = tblList$GSINF)
 tblList <- c(tblList, GSDETProducts)
 
-#samp weights removed from GSCAT
+#size classes removed from GSCAT
 tblList$GSCAT <- rmSizeClasses(tblList$GSCAT)
 
 #add DD versions of coordinates to GSINF
