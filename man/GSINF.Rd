@@ -33,11 +33,11 @@ data.frame
 \item{SLONG_DD}{The longitude at the start of a tow (decimal degrees)}
 \item{ELAT_DD}{The latitude at the end of a tow (decimal degrees)}
 \item{ELONG_DD}{The longitude at the end of a tow (decimal degrees)}
-\item{DMIN_M}{The minimum(shallowest) bottom depth, in meters observed during a tow.}
-\item{DMAX_M}{The maximum(deepest) bottom depth, in meters observed during a tow.}
-\item{DEPTH_M}{The average of start and end depth}
-\item{START_DEPTH_M}{The bottom depth at start of a set, in meters}
-\item{END_DEPTH_M}{The bottom depth at end of a set, in meters}
+\item{DMIN}{The minimum(shallowest) bottom depth, in fathoms observed during a tow.}
+\item{DMAX}{The maximum(deepest) bottom depth, in fathoms observed during a tow.}
+\item{DEPTH}{The average of start and end depth, in fathoms }
+\item{START_DEPTH}{The bottom depth at start of a set, in fathoms}
+\item{END_DEPTH}{The bottom depth at end of a set, in fathoms}
 }
 }
 \usage{

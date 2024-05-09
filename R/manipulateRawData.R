@@ -118,11 +118,11 @@ rmSizeClasses <-function(GSCAT_= NULL){
 addDDCoords <- function(GSINF_=NULL){
   requireNamespace("Mar.utils", quietly = TRUE)
   GSINF_ <- Mar.utils::DDMMx_to_DD(df=GSINF_, format = "DDMMMM", lat.field = "SLAT", lon.field = "SLONG", WestHemisphere = T)
-  colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "LATITUDE"
-  colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "LONGITUDE"
+  colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "SLAT_DD"
+  colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "SLONG_DD"
   GSINF_ <- Mar.utils::DDMMx_to_DD(df=GSINF_, format = "DDMMMM", lat.field = "ELAT", lon.field = "ELONG", WestHemisphere = T)
-  colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "ELATITUDE"
-  colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "ELONGITUDE"
+  colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "ELAT_DD"
+  colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "ELAT_DD"
   return(GSINF_)
 }
 
