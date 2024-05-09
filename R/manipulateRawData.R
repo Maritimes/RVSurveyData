@@ -122,7 +122,7 @@ addDDCoords <- function(GSINF_=NULL){
   colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "SLONG_DD"
   GSINF_ <- Mar.utils::DDMMx_to_DD(df=GSINF_, format = "DDMMMM", lat.field = "ELAT", lon.field = "ELONG", WestHemisphere = T)
   colnames(GSINF_)[colnames(GSINF_)=="LAT_DD"] <- "ELAT_DD"
-  colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "ELAT_DD"
+  colnames(GSINF_)[colnames(GSINF_)=="LON_DD"] <- "ELONG_DD"
   return(GSINF_)
 }
 
