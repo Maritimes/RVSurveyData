@@ -1,7 +1,6 @@
 #' @title GSAUX Metadata
 #' @name GSAUX
 #' @description This is auxiliary gear code table.
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{AUX}{A single digit numeric code to identify any auxiliary gear being used.}
@@ -12,7 +11,6 @@
 #' @title GSCAT Metadata
 #' @name GSCAT
 #' @description This table describes the catches of species, grouped by set.
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
@@ -28,7 +26,6 @@
 #' @title GSCRUISELIST Metadata
 #' @name GSCRUISELIST
 #' @description This table describes all of the different survey cruises (e.g. when and where they went, etc)
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{YEAR}{The year of the survey.}
@@ -50,7 +47,6 @@
 #' @title GSCURNT Metadata
 #' @name GSCURNT
 #' @description This is a lookup table for describing the direction of the tide relative to the vessel.
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{CURNT}{A single digit code to identify the direction of the tide in relation to the vessel}
@@ -88,7 +84,6 @@
 #' @title dataDETS Metadata
 #' @name dataDETS
 #' @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
@@ -108,7 +103,6 @@
 #' @title dataLF Metadata
 #' @name dataLF
 #' @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
@@ -124,7 +118,6 @@
 #' @title GSFORCE Metadata
 #' @name GSFORCE
 #' @description This is a lookup table for describing the wind.
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{FORCE}{A single digit code to identify wind force on the Beaufort scale}
@@ -135,7 +128,6 @@
 #' @title GSGEAR Metadata
 #' @name GSGEAR
 #' @description This is a lookup table for describing the gear
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{GEAR}{A single digit numeric code to identify the gear being used.}
@@ -146,8 +138,7 @@
 #' @title GSHOWOBT Metadata
 #' @name GSHOWOBT
 #' @description This is a lookup table for describing how the vessel's positional information was obtained.
-#' @docType data
-#' @format data\.frame
+#' @format data.frame
 #' \describe{
 #' \item{HOWOBT}{A single digit numeric code describing how the ship's position was determined.}
 #' \item{HOWOBTDESC}{The description of HOWOBT (e.g. "GPS")}
@@ -157,7 +148,6 @@
 #' @title GSINF Metadata
 #' @name GSINF
 #' @description This table describes information about the sets (e.g. when and where they occurred)
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
@@ -197,7 +187,6 @@
 #' @title GSMISSIONS Metadata
 #' @name GSMISSIONS
 #' @description This table describes all of the different survey cruises (e.g. when and where they went, etc)
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
@@ -211,7 +200,6 @@
 #' @title GSSEX Metadata
 #' @name GSSEX
 #' @description This is the code table for the sex codes. 
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{CODE}{Sex Code}
@@ -248,7 +236,6 @@
 #' @title GSSPECIES_NEW
 #' @name GSSPECIES_NEW
 #' @description This is an updated version of the Maritimes Species Code table.
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{CODE}{The numeric code used to identify the species/group.}
@@ -291,7 +278,6 @@
 #' @title GSSTRATUM Metadata
 #' @name GSSTRATUM
 #' @description This is the depth range and area by survey stratum 
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{STRAT}{survey stratum code}
@@ -324,7 +310,6 @@
 #' @title GSWARPOUT Metadata
 #' @name GSWARPOUT
 #' @description This is the table of the WARP associated with each fishing event.
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
@@ -336,7 +321,7 @@
 #' @title GSXTYPE Metadata
 #' @name GSXTYPE
 #' @description This is the code table for the (GSINF) TYPE codes.
-#' @docType data
+
 #' @format data.frame
 #' \describe{
 #' \item{XTYPE}{Numeric code for the experiment type}
@@ -347,7 +332,6 @@
 #' @title GSMATURITY Metadata
 #' @name GSMATURITY
 #' @description This is the code table for the maturity codes. 
-#' @docType data
 #' @format data.frame
 #' \describe{
 #' \item{CODE}{Maturity Code}
@@ -361,7 +345,6 @@
 #' created as a shapefile by Kasia Rozalska and Scott Coffen-Smout.  Mike McMahon added some US areas, 
 #' split 4XP into sub-areas for use by an assessment group, added all fields other than "NAFO", and
 #' converted it to an sf object.    
-#' @docType data
 #' @format sf multipolygon with a CRS of 4326 (i.e. WGS84)
 #' \describe{
 #' \item{NAFO}{This is the finest possible resolution identifier for any area}
@@ -378,7 +361,6 @@
 #' @title strataMar_sf Metadata
 #' @name strataMar_sf
 #' @description This is an sf object of the strata used by DFO Maritimes.
-#' @docType data
 #' @format an sf object with a CRS of 4326 (i.e. WGS84)
 #' \describe{
 #' \item{STRATA_ID}{This is the identifier used for each strata}
@@ -390,7 +372,6 @@
 #' @name strataMar4VSW_sf
 #' @description This is an sf object of the strata used by DFO Maritimes.  This strata file is used
 #' exclusively with the 4VSW survey data.
-#' @docType data
 #' @format an sf object with a CRS of 4326 (i.e. WGS84)
 #' \describe{
 #' \item{STRATA_ID}{This is the identifier used for each strata}
@@ -403,8 +384,7 @@
 #' @description This is a the general area of the Maritimes coast, extracted via the 
 #' \code{mapdata} package on Apr 30, 2024. Field descriptions taken from 
 #' https://r-graphics.org/recipe-miscgraph-map.
-#' @docType data
-#' @format a data.frame storing coordinates in DD
+#' @format an sf object with a CRS of 4326 (i.e. WGS84)
 #' \describe{
 #' \item{long}{Longitudes (dd)}
 #' \item{lat}{Latitudes (dd)}
@@ -416,4 +396,11 @@
 #' example, the Nova Scotia subregion includes many islands, each with its own group.}
 #' }
 "maritimesCoast_sf"
+
+#' @title RVSurveyDataTables Metadata
+#' @name RVSurveyDataTables
+#' @description This is a character vector of the names of data objects available within the 
+#' RVSurveyData package.
+#' @format A character vector where each element is the name of a data object in the RVSurveyData package.
+"RVSurveyDataTables"
 

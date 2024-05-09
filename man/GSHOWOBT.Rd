@@ -5,7 +5,7 @@
 \alias{GSHOWOBT}
 \title{GSHOWOBT Metadata}
 \format{
-data\.frame
+data.frame
 \describe{
 \item{HOWOBT}{A single digit numeric code describing how the ship's position was determined.}
 \item{HOWOBTDESC}{The description of HOWOBT (e.g. "GPS")}

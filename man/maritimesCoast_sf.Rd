@@ -5,7 +5,7 @@
 \alias{maritimesCoast_sf}
 \title{maritimesCoast_sf Metadata}
 \format{
-a data.frame storing coordinates in DD
+an sf object with a CRS of 4326 (i.e. WGS84)
 \describe{
 \item{long}{Longitudes (dd)}
 \item{lat}{Latitudes (dd)}
