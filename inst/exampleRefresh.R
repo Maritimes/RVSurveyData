@@ -37,7 +37,7 @@ tblList$GSINF <- addDDCoords(tblList$GSINF)
 
 #get all the species info in one place
 tblList$GSSPECIES_NEW <- makeGSSPECIES_NEW(GSSPECIES_ANDES_ = tblList$GSSPECIES_ANDES, GSSPEC_ = tblList$GSSPEC)
-tblList$GSSPEC <- tblList$GSSPECIES_ANDES <- tblList$GSDET <- GSDETProducts <- NULL
+tblList$GSSPEC <- tblList$GSSPECIES_ANDES <- GSDETProducts <- NULL
 
 #refresh the Spatial Data
 spat <- updatePackageSpatialData()
@@ -45,3 +45,12 @@ tblList<-c(tblList,spat)
 spat <- NULL
 # When all manipulations are complete, load the data objects into the package
 updatePackageData(tblList)
+
+RVSurveyDataTables <- c('dataDETS', 'dataLF', 'GSAUX', 'GSCAT', 'GSCURNT', 'GSFORCE', 'GSGEAR', 'GSHOWOBT',
+              'GSINF', 'GSMATURITY', 'GSMISSIONS', 'GSSEX', 'GSSPECIES_NEW',
+              'GSSTRATUM', 'GSWARPOUT', 'GSXTYPE')
+# #note that in the vector above, the following tables exist within the RVSurveyData package, but they
+# #are not loaded by default:
+# "GSCRUISELIST", 
+# "GSDET"
+# usethis::use_data(RVSurveyDataTables)

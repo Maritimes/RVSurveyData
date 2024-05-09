@@ -54,32 +54,31 @@
 #' }
 "GSCURNT"
 
-# @title GSDET Metadata
-# @name GSDET
-# @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
-# @docType data
-# @format data.frame
-# \describe{
-# \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
-# \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
-# \item{SPEC}{Maritimes species code.}
-# \item{FSHNO}{Unique number assigned within species and mission.}
-# \item{FLEN}{"Fish Length" - typically cm}
-# \item{FSEX}{Sex of the specimen.}
-# \item{FMAT}{Code for the observed maturity stage.}
-# \item{FWT}{The round weight in grams of the specimen.}
-# \item{AGMAT}{Code for the age material collected.}
-# \item{NANN}{xxx}
-# \item{EDGE}{xxx}
-# \item{CHKMRK}{xxx}
-# \item{AGE}{Age of specimen.}
-# \item{AGER}{xxx}
-# \item{CLEN}{xxx}
-# \item{REMARKS}{xxx}
-# \item{SIZE_CLASS}{xxx}
-# \item{SPECIMEN_ID}{xxx}
-# }
-# "GSDET"
+#' @title GSDET Metadata
+#' @name GSDET
+#' @description This table describes the various measurements take for individual specimens (e.g. length, weight, etc). 
+#' @format data.frame
+#' \describe{
+#' \item{MISSION}{A 10 character field to identify the survey. The first 3 character identifies the vessel (eg. NED), the next 4 characters identifies the year (eg. 2000) and the last 3 characters identifies the survey number within the year. (eg. 001). Example NED2000001.}
+#' \item{SETNO}{Each tow is assigned a numeric set identifier starting with 1 for the first tow and then assigned consecutively.}
+#' \item{SPEC}{Maritimes species code.}
+#' \item{FSHNO}{Unique number assigned within species and mission.}
+#' \item{FLEN}{"Fish Length" - typically cm}
+#' \item{FSEX}{Sex of the specimen.}
+#' \item{FMAT}{Code for the observed maturity stage.}
+#' \item{FWT}{The round weight in grams of the specimen.}
+#' \item{AGMAT}{Code for the age material collected.}
+#' \item{NANN}{xxx}
+#' \item{EDGE}{xxx}
+#' \item{CHKMRK}{xxx}
+#' \item{AGE}{Age of specimen.}
+#' \item{AGER}{xxx}
+#' \item{CLEN}{xxx}
+#' \item{REMARKS}{xxx}
+#' \item{SIZE_CLASS}{xxx}
+#' \item{SPECIMEN_ID}{xxx}
+#' }
+"GSDET"
 
 #' @title dataDETS Metadata
 #' @name dataDETS
