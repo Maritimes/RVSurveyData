@@ -3,7 +3,7 @@
 tblNames <- c('GSAUX', 'GSCAT', 'GSCURNT', 'GSDET', 'GSFORCE', 'GSGEAR', 'GSHOWOBT',
               'GSINF', 'GSMATURITY', 'GSMISSIONS', 'GSSEX', 'GSSPEC', 'GSSPECIES_ANDES',
               'GSSTRATUM', 'GSWARPOUT', 'GSXTYPE', "GSCRUISELIST")
-dataPath<-"C:/Users/McMahonM/OneDrive - DFO-MPO/Documents - Data Management Team-Test Shared Channel/RVSurveyData"
+dataPath<-"C:/DFO-MPO/PESDData/RVSurveyData/"
 
 ##### PURPOSE
 #' The purpose of this example function is to capture the process for updating the data in the 
@@ -46,6 +46,7 @@ spat <- updatePackageSpatialData()
 tblList<-c(tblList,spat)
 spat <- NULL
 # When all manipulations are complete, load the data objects into the package
+library(usethis)
 updatePackageData(tblList)
 
 
